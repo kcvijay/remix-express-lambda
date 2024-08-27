@@ -29,6 +29,6 @@ app.all(
   })
 );
 
-app.listen(PORT, () => {
+export const server = app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
