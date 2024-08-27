@@ -16,6 +16,8 @@ phases:
     commands:
       - echo Build started on `date`
       - npm run build
+      - echo Running server...
+      - node server.mjs
 
   post_build:
     commands:
