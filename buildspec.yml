@@ -1,0 +1,34 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 20.x
+    commands:
+      - echo Installing dependencies...
+      - npm install
+      
+  pre_build:
+    commands:
+      - echo Pre-build phase...
+
+  build:
+    commands:
+      - echo Build started on `date`
+      - npm run build
+
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - echo Preparing artifacts for deployment...
+
+artifacts:
+  files:
+    - '**/*'
+  discard-paths: yes
+
+# Optionally, cache npm dependencies to speed up subsequent builds.
+cache:
+  paths:
+    - 'node_modules/**/*'
+
